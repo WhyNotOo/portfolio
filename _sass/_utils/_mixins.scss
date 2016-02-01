@@ -1,0 +1,71 @@
+/* =============================================================================
+- Exemple of mixin
+================================================================================
+
+@mixin myMixin($propertie, $value) {
+  $propertie: $value
+}
+
+================================================================================ */
+
+@mixin noellipsis {
+  display: inline-block;
+  overflow: auto;
+  text-overflow: initial;
+  white-space: initial;
+  word-wrap: initial;
+}
+
+// Fallback from rem to px for IE8
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 1) + px;
+  font-size: ($sizeValue / 10) + rem;
+}
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@mixin remToPx($property, $values) {
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto {
+      $px : append($px , $value);
+      $rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+
+      @if $unit == "px" {
+        $px : append($px,  $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+
+      @if $unit == "rem" {
+        $px : append($px,  ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

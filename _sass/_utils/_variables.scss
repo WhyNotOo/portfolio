@@ -1,0 +1,119 @@
+/////////////////////////////////////////////////// LBC VARIABLES / ADD WHAT YOU NEED
+//!\\ Naming : 
+///// - US english words : 'color' not 'colour', 'gray' not 'grey' ;
+///// - no capitals in HEX colors.
+
+// colors
+$blue:					#4183d7;
+$lightblue:				#4c94ef;
+$mediumblue:			#3873bd;
+$darkblue: 				#336699;
+$pastelblue:  			#d9e6f7;
+
+$orange:				#f56b2a;
+$lightorange:           #f3814b;
+$pastelorange:          #ffddbd;
+$mediumorange:			#f45d04;
+$darkorange:          	#c0562a;
+
+$black:             	#1a1a1a;
+$grey:                  #666666;
+$lightgrey:				#e6e6e6;
+$mediumgrey:			#cccccc;
+$backgroundgrey:		#fafafa;
+$darkgrey:          	#474747;
+$pastelgrey:			#f2f2f2;
+
+$white:					#ffffff;
+$red: 					#db4437;
+$pastelred:				#ffe7e5;
+$green:                 #6daf76;
+$pastelyellow:			#ffeebf;
+$violet:				#993366;
+$facebook:				#3b5998;
+$twitter:				#00b0ed;
+
+// lightgrey  et lightbggrey et semigrey a remplacer par mediumgrey
+// softgrey a remplacer par pastelgrey
+// softblack a remplacer par black
+// mediumgrey a remplacer par grey
+// a remplacer par lightorange
+// $softorange:            #dfab98;
+// $semiorange:            #f7792f;
+// darkorange a remplacer par mediumorange
+// $darkorange:            #f45d04;
+// darkerorange a remplacer par darkorange
+// $darkerorange:          #c0562a;
+// softyellow a remplacer par pastelyellow
+
+
+// layout width
+$min-width 				: 320px; // min width of the website
+$max-width           	: 1140px; // max width of the website
+
+
+/////////////////////////////////////////////////// KNACSS VARIBALES / DO NOT TOUCH
+
+
+// font sizes
+$base-font-size : 13px; // if "14px" then 1em = 14px
+$line-height    : 1.5; // equiv line-height 1.5
+$h1-size        : 2rem; // equiv "20px"
+$h2-size        : 1.6rem; // equiv "16px"
+$h3-size        : 1.4rem; // equiv "14px"
+$h4-size        : 1.2rem; // equiv "12px"
+$h5-size        : 1.0rem; // equiv "10px"
+$h6-size        : 0.9rem; // equiv "9px"
+
+
+// font stacks
+$font-stack-common    : 'OpenSans', sans-serif; // common font
+$font-stack-headings  : 'OpenSansSemiBold', sans-serif; // headings font
+$font-stack-monospace : 'OpenSans', sans-serif; // monospace font
+$font-stack-universal : 'OpenSans', sans-serif; // universal stack
+$font-stack-bold : 'OpenSansBold', sans-serif; // universal stack
+
+
+// font colors
+$base-color             : $black; // text color on body and content
+$primary-color          : $black; // text color on primary elements
+$secondary-color        : $black; // text color on secondary elements
+$headings-color         : $black; // text color on headings
+$base-color-link        : #333; // base links color
+$base-color-link-hover  : #000; // base hovered/focused links color
+
+
+// backgrounds
+$base-background        : #fff; // body background color
+$primary-background     : #fff; // primary elements background color
+$secondary-background   : #fff; // secondary elements background color
+
+
+// spacings (choose unit you prefer)
+$tiny-value             : 5px; // tiny value for margins / paddings
+$small-value            : 10px; // small value for margins / paddings
+$medium-value           : 20px; // medium value for margins / paddings
+$large-value            : 40px; // large value for margins / paddings
+$extra-large-value      : 80px; // extra large value for margins / paddings
+$ultra-large-value      : 160px; // ultra large value for margins / paddings
+
+
+// layout width
+$min-width 				: 320px; // min width of the website
+$max-width           	: 1140px; // max width of the website
+
+// breakpoints (choose unit you prefer)
+$tiny-screen            : 480px; // tiny screens media query (less than 480px)
+$small-screen           : 768px; // screens between 481px and 768px
+$custom-screen     		: 971px; // custom screen for headerNav
+$medium-screen          : 1024px; // screens between 769px and 1024px
+$large-screen           : 1280px; // screens between 1025px and 1280px
+$extra-large-screen     : 1600px; // screens between 1281px and 1600px
+$ultra-large-screen     : 1920px; // ultra large screens
+
+
+// grids variables (choose unit you prefer)
+$gutter:  1em; // gutter value for grid layouts. Unit can be: %, px, em, rem
+$number:  4; // number of equal columns
+$left:    2; // left side of uneven columns
+$right:   1; // right side of uneven columns	
