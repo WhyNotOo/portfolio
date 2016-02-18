@@ -8,9 +8,11 @@
   },
   "author": "Kevin ALBESSARD",
   "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^1.3.0",
     "gulp-sass": "^2.1.1",

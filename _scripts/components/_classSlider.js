@@ -1,1 +1,4 @@
-console.log('OMG OMG OMG');
+let nom 	= 'Bob',
+	time 	= 'Today';
+
+console.log(`Hello ${nom}, how are you ${time}?`);

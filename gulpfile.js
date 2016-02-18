@@ -7,6 +7,7 @@ var gulp        = require('gulp'),
     path        = require('path'),
     htmlmin     = require('gulp-htmlmin'),
     autoprefixer= require('gulp-autoprefixer'),
+    babel       = require('gulp-babel'),
     browserSync = require('browser-sync'),
     app         = 'audrey/',
     script      = '_scripts/',
@@ -29,7 +30,9 @@ gulp.task('sass', function() {
 // COMPILE SCRIPTS
 gulp.task('scripts', function() {
     gulp.src(script+'**/*.js')
-        .pipe(uglify())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(concat('app.js'))
         .pipe(gulp.dest(js))
 });
