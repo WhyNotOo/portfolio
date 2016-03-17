@@ -1,0 +1,77 @@
+body {
+	display: flex;
+}
+
+#main {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+/* =============================================================================
+- GRID SYSTEM
+================================================================================ */
+
+[class*="grid-"] {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex: 1;
+	// justify-content: space-between;
+	// align-items: stretch
+}
+
+[class*="grid-"] > * {
+	width: -webkit-calc(100% * 1 / #{$number});
+	width: calc(100% * 1 / #{$number});
+}
+
+@mixin grid($number:$number) {
+	& > * {
+		width: -webkit-calc(100% * 1 / #{$number});
+		width: calc(100% * 1 / #{$number});
+	}
+	& > .flex-item-double {
+		width: -webkit-calc(100% * 2 / #{$number});
+		width: calc(100% * 2 / #{$number});
+	}
+	@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
+		& > * {
+			width: 50%;
+		}
+		& > .flex-item-double {
+			width: 100%;
+		}
+	}
+	@media (max-width: $small-screen) {
+		& > *, 
+		& > .flex-item-double {
+			width: 100%;
+		}
+	}
+}
+
+
+.grid-2 {
+	@include grid(2);
+}
+
+.grid-3 {
+	@include grid(3);
+}
+
+.grid-4 {
+	@include grid(4);
+}
+
+.grid-6 {
+	@include grid(6);
+}
+
+.grid-8 {
+	@include grid(8);
+}
+
+.grid-10 {
+	@include grid(10);
+}

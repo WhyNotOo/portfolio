@@ -16,7 +16,9 @@ html {
  * Remove default margin.
  */
 
-body {
+html, body {
+  width: 100%;
+  height: 100%;
   margin: 0;
 }
 
@@ -640,7 +642,7 @@ li ol {
 }
 
 /* max values */
-img:not(.leaflet-tile,.leaflet-marker-icon),
+img,
 table,
 td,
 blockquote,
@@ -655,4 +657,8 @@ video {
 /* margin-bottom on tables */
 table {
     margin-bottom: $medium-value; 
+}
+
+h1, h2, h3, p {
+  margin: 0;
 }

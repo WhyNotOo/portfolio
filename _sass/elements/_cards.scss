@@ -1,0 +1,104 @@
+[class*="card-"] {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	position: relative;
+	color: $white;
+	box-shadow: inset 0 0 8px $black;
+	overflow: hidden;
+}
+
+.card {
+
+	&-blue {
+		background: $blue;
+
+		.card_cover {
+			background: darken($blue, 10%);
+		}
+
+		&:hover {
+			.card_cover {
+				transform: translate3d(-$translate, -$translate, 0);
+			}
+		}
+	}
+
+	&-orange {
+		background: $orange;
+
+		.card_cover {
+			background: darken($orange, 10%);
+		}
+
+		&:hover {
+			.card_cover {
+				transform: translate3d($translate, (-$translate), 0);
+			}
+		}
+	}
+
+	&-green {
+		background: $green;
+
+		.card_cover {
+			background: darken($green, 10%);
+		}
+
+		&:hover {
+			.card_cover {
+				transform: translate3d($translate, $translate, 0);
+			}
+		}
+	}
+
+	&-yellow {
+		background: $yellow;
+
+		.card_cover {
+			background: darken($yellow, 10%);
+		}
+
+		&:hover {
+			.card_cover {
+				transform: translate3d((-$translate), $translate, 0);
+			}
+		}
+	}
+
+	&_cover {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		transition: all 0.3s ease-in-out;
+		cursor: pointer;
+	}
+
+	&_title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@extend %absolute;
+		z-index: 11;
+		text-align: center;
+
+		h2 {
+			@include font-size(22);
+		}
+	}
+
+	&_content {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		@include remToPx(padding, 2rem);
+	}
+
+	&_website {
+
+	}
+
+}

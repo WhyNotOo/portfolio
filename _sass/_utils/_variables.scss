@@ -4,39 +4,20 @@
 ///// - no capitals in HEX colors.
 
 // colors
-$blue:					#4183d7;
-$lightblue:				#4c94ef;
-$mediumblue:			#3873bd;
-$darkblue: 				#336699;
-$pastelblue:  			#d9e6f7;
-
-$orange:				#f56b2a;
-$lightorange:           #f3814b;
-$pastelorange:          #ffddbd;
-$mediumorange:			#f45d04;
-$darkorange:          	#c0562a;
+$blue:					#1976D2;
+$orange: 				#F4511E;
+$green:					#8BC34A;
+$yellow:				#FBC02D;
 
 $black:             	#1a1a1a;
-$grey:                  #666666;
-$lightgrey:				#e6e6e6;
-$mediumgrey:			#cccccc;
-$backgroundgrey:		#fafafa;
-$darkgrey:          	#474747;
-$pastelgrey:			#f2f2f2;
-
 $white:					#ffffff;
-$red: 					#db4437;
-$pastelred:				#ffe7e5;
-$green:                 #6daf76;
-$pastelyellow:			#ffeebf;
-$violet:				#993366;
-$facebook:				#3b5998;
-$twitter:				#00b0ed;
 
 // layout width
 $min-width 				: 320px; // min width of the website
 $max-width           	: 1140px; // max width of the website
 
+
+$translate				: 15px;
 
 /////////////////////////////////////////////////// KNACSS VARIBALES / DO NOT TOUCH
 
@@ -91,7 +72,6 @@ $max-width           	: 1140px; // max width of the website
 // breakpoints (choose unit you prefer)
 $tiny-screen            : 480px; // tiny screens media query (less than 480px)
 $small-screen           : 768px; // screens between 481px and 768px
-$custom-screen     		: 971px; // custom screen for headerNav
 $medium-screen          : 1024px; // screens between 769px and 1024px
 $large-screen           : 1280px; // screens between 1025px and 1280px
 $extra-large-screen     : 1600px; // screens between 1281px and 1600px
