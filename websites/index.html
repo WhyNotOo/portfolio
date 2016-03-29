@@ -1,0 +1,12 @@
+---
+layout: page
+title: Websites
+permalink: /websites/
+---
+
+WEBSITES
+{% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}

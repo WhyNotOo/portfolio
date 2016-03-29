@@ -9,7 +9,7 @@ $orange: 				#F4511E;
 $green:					#8BC34A;
 $yellow:				#FBC02D;
 
-$black:             	#1a1a1a;
+$black:             	#424242;
 $white:					#ffffff;
 
 // layout width
@@ -43,12 +43,12 @@ $font-stack-bold : 'OpenSansBold', sans-serif; // universal stack
 
 
 // font colors
-$base-color             : $black; // text color on body and content
+$base-color             : $white; // text color on body and content
 $primary-color          : $black; // text color on primary elements
 $secondary-color        : $black; // text color on secondary elements
 $headings-color         : $black; // text color on headings
-$base-color-link        : #333; // base links color
-$base-color-link-hover  : #000; // base hovered/focused links color
+$base-color-link        : $white; // base links color
+$base-color-link-hover  : $black; // base hovered/focused links color
 
 
 // backgrounds
