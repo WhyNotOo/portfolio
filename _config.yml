@@ -6,14 +6,11 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Kevin ALBESSARD
-email: k.albessard@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+title: "Kevin ALBESSARD, développeur web et mobile"
+email: "k.albessard@gmail.com"
+description: "Spécialisé dans le développement front-end, je réalise des interfaces avec les dernières technologies Web pour une expérience utilisateur toujours plus simple et ergonomique."
+baseurl: ""
+url: ""
 
 # Build settings
 markdown: kramdown

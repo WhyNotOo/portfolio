@@ -1,0 +1,17 @@
+.column {
+	position: relative;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.row {
+	position: relative;
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+}
+
+.hidden {
+	display: none;
+}
