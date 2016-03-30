@@ -1,4 +1,4 @@
-class Cards {
+class Card {
 
 	constructor() {
 		DOMTokenList.prototype.addMany = function(classes) {
@@ -22,23 +22,11 @@ class Cards {
 		}		
 	}
 
-	loop(set) {
-		for (let i = 0, length = set.length; i < length; i++) {
-			set[i].addEventListener('click', function(e) {
-				e.stopPropagation();
-				Card.reveal(this, set);
-				let cardsChild = set[i].querySelectorAll(':scope [data-element="card-child"]');
-				Card.loop(cardsChild);
-				Card.backToTheFuture();
-			}, false);
-		}
+
+	load(card) {
+		console.log('card loaded', card);
 	}
 
-	reveal(card, set) {
-		Card.hideAllBut(card, set);
-		// Card.pushState(card);
-		card.classList.add('active');
-	}
 
 	hideAllBut(card, set) {
 		for (let i = 0, length = set.length; i < length; i++) {
@@ -47,19 +35,4 @@ class Cards {
 		card.classList.remove('disabled');
 	}
 
-	pushState(card) {
-		let url = card.dataset.state;
-		history.replaceState('', '', url);
-	}
-
-	backToTheFuture(card, set) {
-		
-	}
-
 }
-
-const Card = new Cards();
-
-let cardsParent = document.querySelectorAll('[data-element="card"]');
-
-Card.loop(cardsParent);

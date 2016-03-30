@@ -1,71 +1,23 @@
 body {
+	color: $white;
 	background: $black;
+	overflow: hidden;
 }
 
-/* =============================================================================
-- GRID SYSTEM
-================================================================================ */
-
-[class*="grid-"] {
-	display: flex;
-	flex-direction: row;
+#main {
 	flex-wrap: wrap;
-	flex: 1;
-	// justify-content: space-between;
-	// align-items: stretch
+	align-items: stretch;
 }
 
-[class*="grid-"] > * {
-	width: -webkit-calc(100% * 1 / #{$number});
-	width: calc(100% * 1 / #{$number});
-}
+button,
+.link {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
 
-@mixin grid($number:$number) {
-	& > * {
-		width: -webkit-calc(100% * 1 / #{$number});
-		width: calc(100% * 1 / #{$number});
+	&:hover {
+
 	}
-	& > .flex-item-double {
-		width: -webkit-calc(100% * 2 / #{$number});
-		width: calc(100% * 2 / #{$number});
-	}
-	@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
-		& > * {
-			width: 50%;
-		}
-		& > .flex-item-double {
-			width: 100%;
-		}
-	}
-	@media (max-width: $small-screen) {
-		& > *, 
-		& > .flex-item-double {
-			width: 100%;
-		}
-	}
-}
-
-
-.grid-2 {
-	@include grid(2);
-}
-
-.grid-3 {
-	@include grid(3);
-}
-
-.grid-4 {
-	@include grid(4);
-}
-
-.grid-6 {
-	@include grid(6);
-}
-
-.grid-8 {
-	@include grid(8);
-}
-
-.grid-10 {
-	@include grid(10);
 }

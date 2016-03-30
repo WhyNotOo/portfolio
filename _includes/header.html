@@ -1,12 +1,11 @@
-<header class="header">
+<header class="header{% if page.url == "/" %} hidden{% endif %}">
 
-  <nav class="navigation" role="navigation">
-	<a href="{{ site.baseurl }}/" title="{{ site.title }}">{{ site.title }}</a>
-    {% for my_page in site.pages %}
-      {% if my_page.title %}
-      	<a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-      {% endif %}
-    {% endfor %}
+  <nav class="navigation row" role="navigation">
+	<a href="{{ site.baseurl }}/" title="{{ site.title }}" class="link">home</a>
+  	<button class="link" data-href="blue">websites</button>
+  	<button class="link" data-href="orange">lab</button>
+  	<button class="link" data-href="yellow">about</button>
+  	<button class="link" data-href="green">incoming</button>
   </nav>
 
 </header>

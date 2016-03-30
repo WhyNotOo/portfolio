@@ -1,13 +1,10 @@
 [class*="card-"] {
 	position: relative;
 	display: flex;
-	flex: 1;
-	flex-direction: column;
+	flex: 1 1 50%;
 	z-index: 10;
 
 	&.active {
-		position: initial;
-
 		> .card_container {
 			box-shadow: inset 0 0 8px $black;
 
@@ -181,6 +178,7 @@
 		@include remToPx(padding, 2rem);
 		z-index: 10;
 		background: inherit;
+		transition: all 0.3s ease-in-out;
 		cursor: pointer;
 	}
 
@@ -200,23 +198,42 @@
 		justify-content: center;
 		flex-direction: column;
 		@extend %absolute;
-		z-index: 30;
+		@include remToPx(padding, 1rem);
 		text-align: center;
+		z-index: 30;
 
-		h2 {
-			@include font-size(22);
+		&:hover {
+			h2:after, h3:after {
+				width: 30%;
+				margin-left: 35%;
+			}
+		}
+
+		h2, h3 {
+			text-transform: uppercase;
+
+			&:after {
+				content: "";
+				display: block;
+    			width: 20%;
+				margin-left: 40%;
+				border-bottom: 2px solid $white;
+				transition: all 0.3s ease-in-out;
+			}
 		}
 
 		h3 {
-			@include font-size(20);
+			@include remToPx(margin-bottom, 1rem);
+
+			&:after {
+				@include remToPx(padding-top, .5rem);
+			}
 		}
 	}
 
 	&_content {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		flex: 1;
+		flex-wrap: wrap;
+		align-items: stretch;
 	}
 
 	&_website {

@@ -2,197 +2,51 @@
 layout: default
 ---
 
-<section class="column">
-
-  <div class="grid-2">
-    <section class="card-blue" data-element="card" data-state="websites">
-      <div class="card_container">
-        <div class="card_cover"></div>
-        <aside class="card_title"><h2>WEBSITES</h2></aside>
-        <section class="card_content">
-          <div class="grid-2">
-            <article class="card-blue-light" data-element="card-child" data-state="websites/website1">
-              <div class="card_container">
-
-                <aside class="card_title">
-                  <h3>Website1</h3>
-                  <p>stuffs and shit</p>
-                </aside>
-                <section class="card_content">
-                  <p>Website1</p>
-                </section>
-              </div>
-            </article>
-            <article class="card-blue-darker" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website2</h3>
-                  <p>stuffs and more shit</p>
-                </aside>
-              </div>
-            </article>
+<section class="card-blue" data-element="page">
+  <div class="card_container">
+    <div class="card_cover"></div>
+    <aside class="card_title"><h2>websites</h2></aside>
+    <section class="card_content row">
+      {% for post in site.categories.websites %}
+        <article class="{{ post.class }}" data-element="card">
+          <div class="card_container">
+            <div class="card_title">
+              <h3>{{ post.title }}</h3>
+              {{ post.excerpt }}
+            </div>
           </div>
-          <div class="grid-2">
-            <article class="card-blue-dark" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website3</h3>
-                  <p>stuffs and shit</p>
-                </aside>
-              </div>
-            </article>
-            <article class="card-blue-lighter" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website4</h3>
-                  <p>stuffs and more shit</p>
-                </aside>
-              </div>
-            </article>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <section class="card-orange" data-element="card">
-      <div class="card_container">
-        <div class="card_cover"></div>
-        <aside class="card_title"><h2>LABS</h2></aside>
-        <section class="card_content">
-          <div class="grid-2">
-            <article class="card-orange-light" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website1</h3>
-                  <p>stuffs and shit</p>
-                </aside>
-              </div>
-            </article>
-            <article class="card-orange-darker" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website2</h3>
-                  <p>stuffs and more shit</p>
-                </aside>
-              </div>
-            </article>
-          </div>
-          <div class="grid-2">
-            <article class="card-orange-dark" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website3</h3>
-                  <p>stuffs and shit</p>
-                </aside>
-              </div>
-            </article>
-            <article class="card-orange-lighter" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website4</h3>
-                  <p>stuffs and more shit</p>
-                </aside>
-              </div>
-            </article>
-          </div>
-        </section>
-      </div>
+        </article>
+      {% endfor %}
     </section>
   </div>
+</section>
 
-  <div class="grid-2">
-    <section class="card-yellow" data-element="card">
-      <div class="card_container">
-        <div class="card_cover"></div>
-        <aside class="card_title"><h2>ABOUT</h2></aside>
-        <section class="card_content">
-          <div class="grid-2">
-            <article class="card-yellow-light" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website1</h3>
-                  <p>stuffs and shit</p>
-                </aside>
-              </div>
-            </article>
-            <article class="card-yellow-darker" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website2</h3>
-                  <p>stuffs and more shit</p>
-                </aside>
-              </div>
-            </article>
-          </div>
-          <div class="grid-2">
-            <article class="card-yellow-dark" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website3</h3>
-                  <p>stuffs and shit</p>
-                </aside>
-              </div>
-            </article>
-            <article class="card-yellow-lighter" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website4</h3>
-                  <p>stuffs and more shit</p>
-                </aside>
-              </div>
-            </article>
-          </div>
-        </section>
-      </div>
-    </section>
+<section class="card-orange" data-element="page">
+  <div class="card_container">
+    <div class="card_cover"></div>
+    <aside class="card_title"><h2>lab</h2></aside>
+    <section class="card_content">
 
-    <section class="card-green" data-element="card">
-      <div class="card_container">
-        <div class="card_cover"></div>
-        <aside class="card_title"><h2>???</h2></aside>
-        <section class="card_content">
-          <div class="grid-2">
-            <article class="card-green-light" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website1</h3>
-                  <p>stuffs and shit</p>
-                </aside>
-                <section class="card_content">
-                  
-                </section>
-              </div>
-            </article>
-            <article class="card-green-darker" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website2</h3>
-                  <p>stuffs and more shit</p>
-                </aside>
-              </div>
-            </article>
-          </div>
-          <div class="grid-2">
-            <article class="card-green-dark" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website3</h3>
-                  <p>stuffs and shit</p>
-                </aside>
-              </div>
-            </article>
-            <article class="card-green-lighter" data-element="card-child">
-              <div class="card_container">
-                <aside class="card_title">
-                  <h3>Website4</h3>
-                  <p>stuffs and more shit</p>
-                </aside>
-              </div>
-            </article>
-          </div>
-        </section>
-      </div>
     </section>
   </div>
+</section>
 
+<section class="card-yellow" data-element="page">
+  <div class="card_container">
+    <div class="card_cover"></div>
+    <aside class="card_title"><h2>about</h2></aside>
+    <section class="card_content">
+      
+    </section>
+  </div>
+</section>
+
+<section class="card-green" data-element="page">
+  <div class="card_container">
+    <div class="card_cover"></div>
+    <aside class="card_title"><h2>???</h2></aside>
+    <section class="card_content">
+      
+    </section>
+  </div>
 </section>

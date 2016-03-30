@@ -11,6 +11,8 @@ email: "k.albessard@gmail.com"
 description: "Spécialisé dans le développement front-end, je réalise des interfaces avec les dernières technologies Web pour une expérience utilisateur toujours plus simple et ergonomique."
 baseurl: ""
 url: ""
+permalink: "pretty"
+
 
 # Build settings
 markdown: kramdown

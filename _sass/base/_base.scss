@@ -20,8 +20,6 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  color: $white;
-  background: $black;
 }
 
 /* HTML5 display definitions
@@ -488,12 +486,8 @@ html {
 }
 
 body {
-    
     /* set body font-size in em (1.4em equiv "14px") */
     font-size: ($base-font-size / 10px) + em;
-    
-    background-color: $base-background;
-    color: $base-color;
     font-family: $font-stack-common;
     line-height: $line-height;
 }
@@ -527,17 +521,17 @@ figure {
 
 h1, .h1-like {
     font-size: $h1-size;
-    font-family: $font-stack-headings;
+    font-weight: 300;
 }
 
 h2, .h2-like {
     font-size: $h2-size;
-    font-family: $font-stack-headings;
+    font-weight: 300;
 }
 
 h3, .h3-like {
     font-size: $h3-size;
-    font-family: $font-stack-headings;
+    font-weight: 700;
 }
 
 h4, .h4-like {
@@ -559,7 +553,6 @@ kbd {
     /* IE fix */
     white-space: pre-line;
     white-space: pre-wrap;
-    font-family: $font-stack-monospace;
     line-height: normal;
 }
 
@@ -581,18 +574,6 @@ sup {
 /* ----------------------------- */
 /* == hiding content             */
 /* ----------------------------- */
-
-/* hidden but not for assistance tools, Yahoo! method */
-.visually-hidden {
-    position: absolute !important;
-    border: 0 !important;
-    height: 1px !important;
-    width: 1px !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-    clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
 @media (max-width: $small-screen) {
     .no-small-screen {
         display: none;
@@ -654,11 +635,6 @@ textarea,
 input,
 video {
     max-width: 100%;
-}
-
-/* margin-bottom on tables */
-table {
-    margin-bottom: $medium-value; 
 }
 
 h1, h2, h3, p {
