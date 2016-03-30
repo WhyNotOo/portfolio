@@ -3,6 +3,7 @@
 	display: flex;
 	flex: 1 1 50%;
 	z-index: 10;
+	overflow: hidden;
 
 	&.active {
 		> .card_container {
