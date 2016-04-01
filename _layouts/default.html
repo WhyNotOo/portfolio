@@ -8,7 +8,7 @@
 	{% include header.html %}
 
     <main id="main" class="row" role="main">
-    	<h1 class="visually-hidden">Kevin ALBESSARD, front end developer, discovery orientated, is ready for everything</h1>
+    	{% if page.url == "/" %}<h1 class="visually-hidden">Kevin ALBESSARD, front end developer, discovery orientated, is ready for everything</h1>{% endif %}
       	{{ content }}
     </main>
 

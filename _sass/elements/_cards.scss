@@ -18,6 +18,23 @@
 	&.disabled {
 		z-index: 1;
 	}
+
+	&.loading {
+		> .card_container {
+			display: block;
+			@include size(50px, 50px);
+			left: 50%;
+			top: 50%;
+			@include remToPx(margin, -2.5rem 0 0 -2.5rem);
+			border: 1px solid $white;
+			box-shadow: 0 0 4px $white;
+			animation: spinner 1.5s infinite linear;
+
+			.card_title {
+				opacity: 0;
+			}
+		}
+	}
 }
 
 [data-element*="-child"] {
@@ -201,6 +218,8 @@
 		@extend %absolute;
 		@include remToPx(padding, 1rem);
 		text-align: center;
+		transition: all 0.3s ease-in-out;
+		opacity: 1;
 		z-index: 30;
 
 		&:hover {

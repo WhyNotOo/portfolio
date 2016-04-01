@@ -23,8 +23,13 @@ class Card {
 	}
 
 
-	load(card) {
+	load(card, set) {
+		for (let i = 0, length = set.length; i < length; i++) {
+			set[i].classList.remove('loading');
+		}
+
 		console.log('card loaded', card);
+		card.classList.add('loading');
 	}
 
 
