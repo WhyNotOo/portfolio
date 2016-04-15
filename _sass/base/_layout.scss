@@ -1,12 +1,32 @@
 body {
-	color: $white;
-	background: $black;
+	color: $black;
+	background: $grey;
 	overflow: hidden;
+	min-height: 100vh;
 }
 
-#main {
-	flex-wrap: wrap;
-	align-items: stretch;
+.separator {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding-top: 400px;
+	background: $blue;
+}
+
+.container {
+	max-width: $max-width;
+	margin: 0 auto;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.main-title {
+	display: flex;
+	flex: 1 1 auto;
+	text-align: center;
+	justify-content: center;
+	@include font-size(36);
 }
 
 button,

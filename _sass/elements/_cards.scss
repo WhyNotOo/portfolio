@@ -1,263 +1,119 @@
-[class*="card-"] {
+.card {
 	position: relative;
 	display: flex;
-	flex: 1 1 50%;
-	z-index: 10;
-	overflow: hidden;
+	flex: 1 1 30%;
+	flex-direction: column;
+	max-width: 350px;
+	box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24);
+	border-radius: 2px;
+	background: $white;
+
+	&:hover {
+		h2:after {
+			width: 80%;
+		}
+	}
 
 	&.active {
-		> .card_container {
-			box-shadow: inset 0 0 8px $black;
 
-			> .card_title {
-				display: none;
+		.card_pointer {
+			transform: rotate(-90deg) translate3d(105px, -260px, 0);
+
+			&.active {
+				@extend %absolute;
+				@include size(100%);
+				margin: 0;
+				transform: none;
+				transform-origin: 0 0;
+				border-radius: 0;
+				background: $white;
+				border-color: $red;
+
+				.card_pointer_content {
+					opacity: 1;
+				}		
 			}
 		}
-	}
-
-	&.disabled {
-		z-index: 1;
-	}
-
-	&.loading {
-		> .card_container {
-			display: block;
-			@include size(50px, 50px);
-			left: 50%;
-			top: 50%;
-			@include remToPx(margin, -2.5rem 0 0 -2.5rem);
-			border: 1px solid $white;
-			box-shadow: 0 0 4px $white;
-			animation: spinner 1.5s infinite linear;
-
-			.card_title {
-				opacity: 0;
-			}
-		}
-	}
-}
-
-[data-element*="-child"] {
-	.card_title {
-		background: inherit;
-	}
-}
-
-
-.card {
-
-	&-blue {
-		background: $blue;
-
-		.card_cover {
-			background: darken($blue, 10%);
-		}
-
-		&:hover {
-			.card_cover {
-				transform: translate3d(-$translate, -$translate, 0);
-			}
-		}
-
-		&.active {
-			.card_cover {
-				transform: translate3d(-$translate-full, -$translate-full, 0);
-			}
-		}
-
-		&-light {
-			background: lighten($blue, 10%);
-		}
-
-		&-lighter {
-			background: lighten($blue, 20%);
-		}
-
-		&-dark {
-			background: darken($blue, 10%);
-		}
-
-		&-darker {
-			background: darken($blue, 20%);
-		}
-	}
-
-	&-orange {
-		background: $orange;
-
-		.card_cover {
-			background: darken($orange, 10%);
-		}
-
-		&:hover {
-			.card_cover {
-				transform: translate3d($translate, (-$translate), 0);
-			}
-		}
-
-		&.active {
-			.card_cover {
-				transform: translate3d($translate-full, (-$translate-full), 0);
-			}
-		}
-
-		&-light {
-			background: lighten($orange, 10%);
-		}
-
-		&-lighter {
-			background: lighten($orange, 20%);
-		}
-
-		&-dark {
-			background: darken($orange, 10%);
-		}
-
-		&-darker {
-			background: darken($orange, 20%);
-		}
-	}
-
-	&-green {
-		background: $green;
-
-		.card_cover {
-			background: darken($green, 10%);
-		}
-
-		&:hover {
-			.card_cover {
-				transform: translate3d($translate, $translate, 0);
-			}
-		}
-
-		&.active {
-			.card_cover {
-				transform: translate3d($translate-full, $translate-full, 0);
-			}
-		}
-
-		&-light {
-			background: lighten($green, 10%);
-		}
-
-		&-lighter {
-			background: lighten($green, 20%);
-		}
-
-		&-dark {
-			background: darken($green, 10%);
-		}
-
-		&-darker {
-			background: darken($green, 20%);
-		}
-	}
-
-	&-yellow {
-		background: $yellow;
-
-		.card_cover {
-			background: darken($yellow, 10%);
-		}
-
-		&:hover {
-			.card_cover {
-				transform: translate3d((-$translate), $translate, 0);
-			}
-		}
-
-		&.active {
-			.card_cover {
-				transform: translate3d((-$translate-full), $translate-full, 0);
-			}
-		}
-
-		&-light {
-			background: lighten($yellow, 10%);
-		}
-
-		&-lighter {
-			background: lighten($yellow, 20%);
-		}
-
-		&-dark {
-			background: darken($yellow, 10%);
-		}
-
-		&-darker {
-			background: darken($yellow, 20%);
-		}
-	}
-
-	&_container {
-		display: flex;
-		@extend %absolute;
-		@include remToPx(padding, 2rem);
-		z-index: 10;
-		background: inherit;
-		transition: all 0.3s ease-in-out;
-		cursor: pointer;
-	}
-
-	&_cover {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		z-index: 20;
-		transition: all 0.3s ease-in-out;
-		cursor: pointer;
 	}
 
 	&_title {
+		position: relative;
+		min-height: 150px;
 		display: flex;
-		justify-content: center;
+		flex: 0 0 auto;
 		flex-direction: column;
-		@extend %absolute;
-		@include remToPx(padding, 1rem);
-		text-align: center;
+		color: $white;
 		transition: all 0.3s ease-in-out;
-		opacity: 1;
-		z-index: 30;
+		background: url('/img/material.png');
+		background-size: contain;
 
-		&:hover {
-			h2:after, h3:after {
-				width: 30%;
-				margin-left: 35%;
-			}
-		}
-
-		h2, h3 {
-			text-transform: uppercase;
+		h2 {
+			position: absolute;
+			bottom: 10px;
+			left: 20px;
+			right: 0;
+			font-weight: 700;
 
 			&:after {
 				content: "";
 				display: block;
-    			width: 20%;
-				margin-left: 40%;
+				width: 20%;
 				border-bottom: 2px solid $white;
 				transition: all 0.3s ease-in-out;
 			}
 		}
+	}
 
-		h3 {
-			@include remToPx(margin-bottom, 1rem);
+	&_pointer {
+		position: absolute;
+		right: 2rem;
+		@include size(5rem, 5rem);
+		@include remToPx(margin-top, -2.5rem);
+		color: $white;
+		background: $red;
+		border-radius: 50%;
+		border: 2px solid $white;
+		z-index: 10;
+		transition: all 0.3s ease-in-out;
 
-			&:after {
-				@include remToPx(padding-top, .5rem);
+		&_content {
+			@extend .card_content;
+			color: $black;
+			opacity: 0;
+			overflow: hidden;
+			overflow-y: auto;
+			transition: opacity 0.3s ease-in-out;
+
+			article {
+				display: flex;
+				flex: 1;
+				flex-direction: column;
+				border-bottom: 1px solid $black;
+				@include remToPx(padding-bottom, 1rem);
+				@include remToPx(margin-bottom, 1rem);
+
+				&:last-child {
+					border: none;
+				}
+			}
+
+			h4 {
+				@include remToPx(margin-bottom, 1rem);
+				@include font-size(16);
 			}
 		}
 	}
 
 	&_content {
-		flex-wrap: wrap;
-		align-items: stretch;
-	}
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		@include remToPx(padding, 2rem);
 
-	&_website {
-
+		h3 {
+			color: darken($grey, 50%);
+			@include remToPx(margin-bottom, 1rem);
+		}
 	}
 
 }

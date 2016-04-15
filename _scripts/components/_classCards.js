@@ -1,26 +1,6 @@
 class Card {
 
-	constructor() {
-		DOMTokenList.prototype.addMany = function(classes) {
-			var classes = classes.split(' '),
-				i = 0,
-				ii = classes.length;
-
-			for(i; i<ii; i++) {
-				this.add(classes[i]);
-			}
-		}
-
-		DOMTokenList.prototype.removeMany = function(classes) {
-			var classes = classes.split(' '),
-				i = 0,
-				ii = classes.length;
-
-			for(i; i<ii; i++) {
-				this.remove(classes[i]);
-			}
-		}		
-	}
+	constructor() {}
 
 
 	load(card, set) {
@@ -29,15 +9,17 @@ class Card {
 		}
 
 		console.log('card loaded', card);
-		card.classList.add('loading');
-	}
-
-
-	hideAllBut(card, set) {
-		for (let i = 0, length = set.length; i < length; i++) {
-			set[i].classList.add('disabled');
-		}
-		card.classList.remove('disabled');
+		card.parentElement.classList.add('active');
+		Helper.timeout(function() {
+			card.classList.add('active');
+		}, 400);
 	}
 
 }
+
+const Cards = new Card();
+let cards = document.querySelectorAll('.card_pointer');
+Helper.loop(cards, 'click', function(e) {
+	e.preventDefault();
+	Cards.load(this, cards);
+});

@@ -7,9 +7,12 @@
 
 	{% include header.html %}
 
-    <main id="main" class="row" role="main">
-    	{% if page.url == "/" %}<h1 class="visually-hidden">Kevin ALBESSARD, front end developer, discovery orientated, is ready for everything</h1>{% endif %}
-      	{{ content }}
+	<div class="separator"></div>
+
+    <main id="main" class="flex" role="main">
+    	<section class="container flex">
+      		{{ content }}
+    	</section>
     </main>
 
     {% include footer.html %}

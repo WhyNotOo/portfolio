@@ -2,51 +2,45 @@
 layout: default
 ---
 
-<section class="card-blue" data-element="page">
-  <div class="card_container">
-    <div class="card_cover"></div>
-    <aside class="card_title"><h2>websites</h2></aside>
-    <section class="card_content row">
+<h1 class="main-title">Title and stuff and shit omg plz write more, another line this is so good yes input more text sempai</h1>
+<section class="card">
+  <header class="card_title">
+    <h2>websites</h2>
+  </header>
+  <div class="card_pointer">
+    <div class="card_pointer_content">
       {% for post in site.categories.websites %}
-        <article class="{{ post.class }}" data-element="card">
-          <div class="card_container">
-            <div class="card_title">
-              <h3>{{ post.title }}</h3>
-              {{ post.excerpt }}
-            </div>
-          </div>
+        <article>
+          <h4>{{ post.title }}</h4>
+          {{ post.excerpt }}
         </article>
       {% endfor %}
-    </section>
+    </div>
   </div>
+  <article class="card_content">
+    <h3>Subtitle</h3>
+    <p class="description">Some content about all the websites I've made stuffs and shit Some content about all the websites I've made stuffs and shit</p>
+  </article>
 </section>
 
-<section class="card-orange" data-element="page">
-  <div class="card_container">
-    <div class="card_cover"></div>
-    <aside class="card_title"><h2>lab</h2></aside>
-    <section class="card_content">
-
-    </section>
-  </div>
+<section class="card">
+  <header class="card_title">
+    <h2>lab</h2>
+  </header>
+  <div class="card_pointer"></div>
+  <article class="card_content">
+    <h3>Subtitle</h3>
+    <p class="description">Some content about all the websites I've made stuffs and shit Some content about all the websites I've made stuffs and shit</p>
+  </article>
 </section>
 
-<section class="card-yellow" data-element="page">
-  <div class="card_container">
-    <div class="card_cover"></div>
-    <aside class="card_title"><h2>about</h2></aside>
-    <section class="card_content">
-      
-    </section>
-  </div>
-</section>
-
-<section class="card-green" data-element="page">
-  <div class="card_container">
-    <div class="card_cover"></div>
-    <aside class="card_title"><h2>incoming</h2></aside>
-    <section class="card_content">
-      
-    </section>
-  </div>
+<section class="card">
+  <header class="card_title">
+    <h2>about</h2>
+  </header>
+  <div class="card_pointer"></div>
+  <article class="card_content">
+    <h3>Subtitle</h3>
+    <p class="description">Some content about all the websites I've made stuffs and shit Some content about all the websites I've made stuffs and shit</p>
+  </article>
 </section>
