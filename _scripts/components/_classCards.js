@@ -11,7 +11,7 @@ class Card {
 		console.log('card loaded', card);
 		card.parentElement.classList.add('active');
 		Helper.timeout(function() {
-			card.classList.add('active');
+			card.classList.add('extended');
 		}, 400);
 	}
 

@@ -15,18 +15,30 @@ body {
 }
 
 .container {
+	display: flex;
 	max-width: $max-width;
 	margin: 0 auto;
-	flex-flow: row wrap;
-	justify-content: space-between;
+	flex-direction: column;
 }
 
-.main-title {
+.headline {
 	display: flex;
-	flex: 1 1 auto;
+	flex: 0;
 	text-align: center;
 	justify-content: center;
-	@include font-size(36);
+	@include remToPx(padding, 4rem 0);
+	z-index: 10;
+
+	h1 {
+		@include font-size(36);
+	}
+}
+
+.posts {
+	display: flex;
+	flex: 1;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }
 
 button,

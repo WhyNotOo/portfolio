@@ -67,6 +67,11 @@
 }
 
 
+@keyframes curve {
+    from { transform: rotate(0) translate3d(0, 0, 0); }
+    to { transform: rotate(-90deg) translate3d(105px, -260px, 0); }
+}
+
 
 /* =============================================================================
   PLACEHOLDERS
