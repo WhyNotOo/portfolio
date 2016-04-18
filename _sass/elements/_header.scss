@@ -1,4 +1,6 @@
 .header {
 	position: relative;
+	@include remToPx(padding, 1rem 0);
+	background: darken($blue, 20%);
 	z-index: 10;
 }

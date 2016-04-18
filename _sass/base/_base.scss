@@ -494,6 +494,7 @@ body {
 
 a {
     color: $base-color-link;
+    text-decoration: none;
     &:hover, &:focus, &:active {
         color: $base-color-link-hover;
     }

@@ -19,6 +19,10 @@
 		.card_pointer {
 			animation: .4s ease-in-out 0s curve;
 		}
+
+		.fa {
+			opacity: 0;
+		}
 	}
 
 	&_title {
@@ -57,10 +61,19 @@
 		color: $white;
 		background: $red;
 		border-radius: 50%;
-		border: 2px solid $white;
 		z-index: 10;
 		transition: all 0.3s ease-in-out;
 		cursor: pointer;
+		box-shadow: 0 2px 4px rgba(0,0,0, 0.12), 0 2px 4px rgba(0,0,0, 0.24);
+
+		&:hover {
+			background: $white;
+			color: $red;
+
+			.fa {
+				transform: rotateZ(360deg);
+			}
+		}
 
 		&.extended {
 			top: 0;
@@ -69,38 +82,108 @@
 			@include size(100%);
 			border-radius: 0;
 			background: $white;
-			border: none;
+			cursor: default;
 
 			.card_pointer_content {
 				opacity: 1;
+			}
+
+			.fa {
+				display: none;
 			}		
 		}
 
 		&_content {
+			display: flex;
 			height: 100%;
 			color: $black;
 			opacity: 0;
 			overflow-y: auto;
+			flex-direction: column;
 			transition: opacity 1s ease-in-out;
 
-			article {
+			.post {
 				display: flex;
-				flex: 1;
-				flex-direction: column;
+				flex: 0 0 25%;
 				overflow: hidden;
-				border-bottom: 1px solid $black;
-				@include remToPx(padding-bottom, 1rem);
-				@include remToPx(margin-bottom, 1rem);
+				border-bottom: 1px solid darken($grey, 50%);
 
 				&:last-child {
 					border: none;
 				}
+
+				&:hover {
+					.post_image_border {
+						transform: translateX(0);
+					}
+
+					.post_image_text {
+						opacity: 1;
+					}
+
+					.post_text_border {
+						width: 100%;
+					}
+				}
 			}
 
-			h4 {
-				@include remToPx(margin-bottom, 1rem);
-				@include font-size(16);
+			.post_image {
+				position: relative;
+				display: flex;
+				flex: 0 0 30%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				overflow: hidden;
+
+				&_border {
+					display: flex;
+					align-items: center;
+					@extend %absolute;
+					text-transform: uppercase;
+					text-align: center;
+					@include font-size(15);
+					font-weight: 400;
+					background: darken($blue, 20%);
+					transition: all .3s ease-in-out;
+					transform: translateX(90%);
+					z-index: 10;
+					overflow: hidden;
+				}
+
+				&_text {
+					display: block;
+					margin: 0 auto;
+					opacity: 0;
+					transition: opacity .3s linear;
+				}
 			}
+
+			.post_text {
+				position: relative;
+				display: flex;
+				flex: 1;
+				flex-direction: column;
+				@include remToPx(padding, 1rem);
+
+				&_border {
+					display: block;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 0;
+					height: 5px;
+					background: darken($blue, 20%);
+					transition: width .3s ease-in-out;
+				}
+			}
+		}
+
+		.fa {
+			display: block;
+			text-align: center;
+			line-height: 48px;
+			@include font-size(30);
+			transition: all .3s linear;
 		}
 	}
 
@@ -109,11 +192,6 @@
 		flex: 1;
 		flex-direction: column;
 		@include remToPx(padding, 2rem);
-
-		h3 {
-			color: darken($grey, 50%);
-			@include remToPx(margin-bottom, 1rem);
-		}
 	}
 
 }

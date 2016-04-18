@@ -12,12 +12,19 @@ layout: default
       <h2>websites</h2>
     </header>
     <div class="card_pointer">
+      <i class="fa fa-plus"></i>
       <div class="card_pointer_content">
         {% for post in site.categories.websites %}
-          <article>
-            <h4>{{ post.title }}</h4>
-            {{ post.excerpt }}
-          </article>
+          <a href="{{ post.link }}" class="post">
+            <div class="post_image" style="background-image: url('{{ post.image }}')">
+              <span class="post_image_border"><span class="post_image_text">read more</span></span>
+            </div>
+            <div class="post_text">
+              <h4 class="post_title">{{ post.title }}</h4>
+              {{ post.excerpt }}
+              <span class="post_text_border"></span>
+            </div>
+          </a>
         {% endfor %}
       </div>
     </div>

@@ -3,7 +3,7 @@ layout: post
 title:  "Leboncoin"
 date:   2016-03-28
 categories: websites
-class: card-blue-light
+image: /img/thumbnail.jpg
 ---
 
 OMG OMG OMG

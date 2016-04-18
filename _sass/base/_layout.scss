@@ -16,6 +16,7 @@ body {
 
 .container {
 	display: flex;
+	flex: 1;
 	max-width: $max-width;
 	margin: 0 auto;
 	flex-direction: column;
@@ -26,7 +27,7 @@ body {
 	flex: 0;
 	text-align: center;
 	justify-content: center;
-	@include remToPx(padding, 4rem 0);
+	@include remToPx(padding, 6rem 0);
 	z-index: 10;
 
 	h1 {
@@ -49,8 +50,15 @@ button,
 	border: none;
 	background: none;
 	text-decoration: none;
+	color: $black;
 
 	&:hover {
-		color: $white;
+		color: $black;
 	}
+}
+
+h3, h4 {
+	color: darken($grey, 50%);
+	@include remToPx(margin-bottom, 1rem);
+	@include font-size(16);
 }
