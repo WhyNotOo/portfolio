@@ -7,22 +7,21 @@ layout: default
 </header>
 
 <section class="posts">
-  <article class="card">
+  <section class="card">
     <header class="card_title">
       <h2>websites</h2>
     </header>
-    <div class="card_pointer">
+    <div class="action">
       <i class="fa fa-plus"></i>
-      <div class="card_pointer_content">
-        {% for post in site.categories.websites %}
-          <a href="{{ post.link }}" class="post">
-            <div class="post_image" style="background-image: url('{{ post.image }}')">
+      <div class="action_content">
+        {% for post in site.categories.Websites %}
+          <a href="{{ post.url }}" title="{{ post.title }}" class="post">
+            <div class="post_image" style="background-image: url('{{ post.thumbnail }}')">
               <span class="post_image_border"><span class="post_image_text">read more</span></span>
             </div>
             <div class="post_text">
               <h4 class="post_title">{{ post.title }}</h4>
               {{ post.excerpt }}
-              <span class="post_text_border"></span>
             </div>
           </a>
         {% endfor %}
@@ -32,27 +31,57 @@ layout: default
       <h3>Subtitle</h3>
       <p class="description">Some content about all the websites I've made stuffs and shit Some content about all the websites I've made stuffs and shit</p>
     </article>
-  </article>
+  </section>
 
-  <article class="card">
+  <section class="card">
     <header class="card_title">
       <h2>lab</h2>
     </header>
-    <div class="card_pointer"></div>
+    <div class="action">
+      <i class="fa fa-plus"></i>
+      <div class="action_content">
+        {% for post in site.categories.Lab %}
+          <a href="{{ post.url }}" title="{{ post.title }}" class="post">
+            <div class="post_image" style="background-image: url('{{ post.thumbnail }}')">
+              <span class="post_image_border"><span class="post_image_text">read more</span></span>
+            </div>
+            <div class="post_text">
+              <h4 class="post_title">{{ post.title }}</h4>
+              {{ post.excerpt }}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
     <article class="card_content">
       <h3>Subtitle</h3>
       <p class="description">Some content about all the websites I've made stuffs and shit Some content about all the websites I've made stuffs and shit</p>
     </article>
-  </article>
+  </section>
 
-  <article class="card">
+  <section class="card">
     <header class="card_title">
       <h2>about</h2>
     </header>
-    <div class="card_pointer"></div>
+    <div class="action">
+      <i class="fa fa-plus"></i>
+      <div class="action_content">
+        {% for post in site.categories.About %}
+          <a href="{{ post.url }}" title="{{ post.title }}" class="post">
+            <div class="post_image" style="background-image: url('{{ post.thumbnail }}')">
+              <span class="post_image_border"><span class="post_image_text">read more</span></span>
+            </div>
+            <div class="post_text">
+              <h4 class="post_title">{{ post.title }}</h4>
+              {{ post.excerpt }}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
     <article class="card_content">
       <h3>Subtitle</h3>
       <p class="description">Some content about all the websites I've made stuffs and shit Some content about all the websites I've made stuffs and shit</p>
     </article>
-  </article>
+  </section>
 </section>

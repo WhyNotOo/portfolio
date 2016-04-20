@@ -1,11 +1,9 @@
 ---
 layout: post
-title:  "Leboncoin"
-date:   2016-03-28
-categories: Websites
-thumbnail: /img/thumbnail.jpg
-image: /img/leboncoina.png
-author: Kevin Albessard
+title:  "About"
+date:   1988-03-28
+categories: About
+image: /img/thumbnail.jpg
 ---
 
 OMG OMG OMG

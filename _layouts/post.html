@@ -1,15 +1,35 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post_header">
-    <h1 class="post_title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post_meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+<section id="theChosenOne" class="flex">
 
-  <div class="post_content" itemprop="articleBody">
-    {{ content }}
-  </div>
+	<article class="detail column" itemscope itemtype="http://schema.org/BlogPosting">
 
-</article>
+		<div class="detail_image" style="background-image: url('{{ page.image }}')"></div>
+
+		<div class="action_page">
+			<i class="fa fa-share-alt"></i>
+		</div>
+		<div class="action_page_content row">
+			<a href="" class="social"><i class="fa fa-facebook"></i></a>
+			<a href="" class="social"><i class="fa fa-twitter"></i></a>
+			<a href="" class="social"><i class="fa fa-google"></i></a>
+		</div>
+		
+		<header class="detail_header">
+			<p class="detail_meta"><a href="/" title="Retour à l'accueil">{{ page.categories }}</a><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+			<h1 class="detail_title" itemprop="name headline">{{ page.title }}</h1>
+		</header>
+
+		<div class="detail_content column" itemprop="articleBody">
+			{{ content }}
+		</div>
+
+		<footer class="detail_footer">
+			<p>{% if page.author %} By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+		</footer>
+
+	</article>
+
+</section>

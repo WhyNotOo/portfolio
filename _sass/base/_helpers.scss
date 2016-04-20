@@ -3,6 +3,11 @@
 	flex: 1;
 }
 
+.flex-zero {
+	display: flex;
+	flex: 0;
+}
+
 .column {
 	position: relative;
 	display: flex;
@@ -19,6 +24,42 @@
 
 .hidden {
 	display: none;
+}
+
+.social {
+	position: relative;
+	@include size(4rem, 4rem);
+	color: $white;
+	background: $white;
+	border-radius: 50%;
+	z-index: 10;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 2px 4px rgba(0,0,0, 0.12), 0 2px 4px rgba(0,0,0, 0.24);
+
+	&:after {
+		content: '';
+		pointer-events: none;
+		position: absolute;
+		@include size();
+		top: 0;
+		left: 0;
+		z-index: -1;
+		border-radius: 50%;
+		box-shadow: inset 0 0 0 50px $red;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&:hover {
+		color: $red;
+
+		&:after {
+			box-shadow: inset 0 0 0 2px $red;
+		}
+	}
+
+	.fa {
+		line-height: 40px !important;
+	}
 }
 
 /* hidden but not for assistance tools, Yahoo! method */

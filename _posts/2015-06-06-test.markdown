@@ -2,7 +2,7 @@
 layout: post
 title:  "Test"
 date:   2015-06-06
-categories: websites
+categories: Websites
 image: /img/thumbnail.jpg
 ---
 

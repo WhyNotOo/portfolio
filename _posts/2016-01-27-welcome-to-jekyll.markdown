@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2016-01-27 17:04:04 +0100
-categories: websites
+categories: Websites
 image: /img/thumbnail.jpg
 ---
 
