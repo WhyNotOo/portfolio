@@ -445,7 +445,8 @@ html {
 
 ul,
 ol {
-    padding-left: 2em;
+  list-style-type: none;
+  padding: 0
 }
 
 ul.unstyled {

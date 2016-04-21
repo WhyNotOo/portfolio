@@ -4,14 +4,23 @@
 
 	.detail {
 		background: $white;
-		box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24);
+		box-shadow: $shadow;
 
 		&_image {
+			position: relative;
 			min-height: 200px;
-			border-bottom: 1px solid darken($grey, 50%); 
+			border-bottom: 1px solid darken($grey, 20%);
+			background-size: cover;
+
+			&:after {
+				content: '';
+				@extend %absolute;
+				box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+				z-index: 2;
+			}
 		}
 
-		&_header, &_content, &_footer {
+		&_header, &_content {
 			@include remToPx(padding, 0 2rem);
 		}
 
@@ -36,8 +45,29 @@
 			}
 		}
 
+		&_content {
+			p {
+				@include remToPx(margin-bottom, 1rem);
+			}
+		}
+
 		&_footer {
-			@include remToPx(padding-bottom, 2rem);
+			@include remToPx(margin, 0 2rem);
+			@include remToPx(padding, 1rem 0 2rem 0);
+			border-top: 1px solid darken($grey, 20%);
+
+			&_author {
+				@include remToPx(margin-top, 2rem);
+
+				&_thumbnail {
+					display: inline-block;
+					@include size(30px, 30px);
+					@include remToPx(margin-right, .5rem);
+					vertical-align: middle;
+					background-size: cover;
+					border-radius: 50%;
+				}
+			}
 		}
 	}
 

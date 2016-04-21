@@ -14,7 +14,7 @@ body {
 	right: 0;
 	height: 400px;
 	background: $blue;
-	box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24);
+	box-shadow: $shadow;
 }
 
 .container {
@@ -40,24 +40,8 @@ body {
 
 .posts {
 	display: flex;
-	flex: 1;
 	flex-flow: row wrap;
 	justify-content: space-between;
-}
-
-button,
-.link {
-	display: block;
-	margin: 0;
-	padding: 0;
-	border: none;
-	background: none;
-	text-decoration: none;
-	color: $black;
-
-	&:hover {
-		color: $black;
-	}
 }
 
 h3, h4 {

@@ -27,7 +27,17 @@ layout: default
 		</div>
 
 		<footer class="detail_footer">
-			<p>{% if page.author %} By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+			<ul>
+				{% for skill in page.skills %}
+					<li class="skill">{{ skill }}</li>
+				{% endfor %}
+			</ul>
+			<p class="detail_footer_author">
+				{% if page.author %}
+					<span class="detail_footer_author_thumbnail" style="background-image: url('/img/me.jpg')"></span>
+					By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+				{% endif %}
+			</p>
 		</footer>
 
 	</article>
