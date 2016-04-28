@@ -54,9 +54,8 @@ button,
 	}
 
 	&.active {
-		.action_content {
-			opacity: 1;
-			transform: translateY(0);
+		.post {
+			transform: translateX(0);
 		}
 	}
 
@@ -64,11 +63,8 @@ button,
 		display: none;
 		height: 100%;
 		color: $black;
-		opacity: 0;
 		overflow-y: auto;
 		flex-direction: column;
-		transition: all 0.3s ease-in-out;
-		transform: translateY(-100%);
 
 		.post {
 			display: flex;
@@ -76,12 +72,26 @@ button,
 			overflow: hidden;
 			border-bottom: 1px solid darken($grey, 50%);
 			cursor: pointer;
+			transform: translateX(-100%);
+
+			&:first-child {
+				transition: all 0.3s ease-in-out !important;
+			}
+
+			&:nth-child(2) {
+				transition: all 0.6s ease-in-out;
+			}
 
 			&:last-child {
 				border: none;
+				transition: all 0.9s ease-in-out;
 			}
 
 			&:hover {
+				.post_title {
+					color: darken($grey, 30%);
+				}
+				
 				.post_image_border {
 					transform: translateX(0);
 				}
@@ -157,6 +167,10 @@ button,
 	z-index: 10;
 	transition: all 0.3s ease-in-out;
 	box-shadow: $shadow-big;
+
+	&:visited {
+		color: $white;
+	}
 
 	&:after {
 		content: '';

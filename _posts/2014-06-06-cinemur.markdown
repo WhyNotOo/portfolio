@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Cinemur"
+date:   2014-06-06
+categories: Websites
+thumbnail: /img/cinemur-thumb.png
+image: /img/cinemur.png
+author: Kevin Albessard
+skills: [HTML5, CSS3 (SASS), Javascript, PHP, Ajax]
+goto: http://www.cine-loisirs.fr
+---
+
+<h2>Context</h2>
+Cinemur is an agency that provide it's users a slick tool to consult all the things about cinema, like trailers, showtimes, actors, comments, and more.
+
+They wanted to provide a new service with TV show, so I was in charge of making this whole part.
+
+<h2>Missons</h2>
+Rework the whole CSS into SASS : add a file architecture, structure the file, order the css properties correctly, add variables, mixins, and placeholders for a better maintainability.
+
+Add the TV show 

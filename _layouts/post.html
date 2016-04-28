@@ -6,12 +6,15 @@ layout: default
 
 	<article class="detail column" itemscope itemtype="http://schema.org/BlogPosting">
 
-		<div class="detail_image" style="background-image: url('{{ page.image }}')"></div>
+		<div class="detail_image" style="background-image: url('{{ page.image }}')">
+			<a href="{{ page.goto }}" title="{{ page.title }}" target="_blank"><i class="fa fa-external-link"></i> Visit the website</a>
+		</div>
 
 		<div class="action_page">
 			<i class="fa fa-share-alt"></i>
 		</div>
 		<div class="action_page_content row">
+			<a href="{{ page.goto }}" title="{{ page.title }}" target="_blank" class="social"><i class="fa fa-link"></i></a>
 			<a href="" class="social"><i class="fa fa-facebook"></i></a>
 			<a href="" class="social"><i class="fa fa-twitter"></i></a>
 			<a href="" class="social"><i class="fa fa-google"></i></a>
@@ -26,19 +29,19 @@ layout: default
 			{{ content }}
 		</div>
 
-		<footer class="detail_footer">
-			<ul>
-				{% for skill in page.skills %}
-					<li class="skill">{{ skill }}</li>
-				{% endfor %}
-			</ul>
-			<p class="detail_footer_author">
-				{% if page.author %}
+		{% if page.author %}
+			<footer class="detail_footer">
+				<ul>
+					{% for skill in page.skills %}
+						<li class="skill">{{ skill }}</li>
+					{% endfor %}
+				</ul>
+				<p class="detail_footer_author">
 					<span class="detail_footer_author_thumbnail" style="background-image: url('/img/me.jpg')"></span>
 					By <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-				{% endif %}
-			</p>
-		</footer>
+				</p>
+			</footer>
+		{% endif %}
 
 	</article>
 

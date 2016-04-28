@@ -18,6 +18,29 @@
 				box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 				z-index: 2;
 			}
+
+			&:hover {
+				a {
+					opacity: 1;
+				}
+			}
+
+			a {
+				@extend %absolute;
+				color: $white;
+				@include font-size(40);
+				line-height: 200px;
+				text-align: center;
+				opacity: 0;
+				z-index: 10;
+				background: rgba(0, 0, 0, 0.6);
+				transition: opacity 0.3s ease-in-out;
+			}
+
+			.fa {
+				@include font-size(30);
+				@include remToPx(margin-right, 1rem);
+			}
 		}
 
 		&_header, &_content {
@@ -25,7 +48,7 @@
 		}
 
 		&_header {
-			@include remToPx(margin-top, 2rem);
+			@include remToPx(margin, 2rem 0);
 			@include font-size(16);
 
 			a {
@@ -38,7 +61,6 @@
 			}
 
 			h1 {
-				@include remToPx(margin-bottom, 2rem);
 				@include font-size(30);
 				line-height: 36px;
 				font-weight: 700;
@@ -46,7 +68,14 @@
 		}
 
 		&_content {
-			p {
+			@include remToPx(padding-bottom, 2rem);
+
+			h2 {
+				@include remToPx(margin-bottom, 1rem);
+				@include font-size(18);
+			}
+
+			p:not(:last-child) {
 				@include remToPx(margin-bottom, 1rem);
 			}
 		}
@@ -77,6 +106,9 @@
 		overflow: hidden;
 
 		&.active {
+			color: $red;
+			background: $white;
+			
 			.fa:before {
 				content: "\f00d";
 			}
@@ -92,7 +124,7 @@
 			transition: width 0.3s ease-in-out;
 
 			&.active {
-				width: 230px;
+				width: 280px;
 
 				.social {
 					opacity: 1;
