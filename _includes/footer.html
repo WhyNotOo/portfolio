@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer{% if page.url != "/index.html" %} minimised{% endif %}">
 
   <script type="text/javascript" src="{{ "/js/app.js" | prepend: site.baseurl }}"></script>
 

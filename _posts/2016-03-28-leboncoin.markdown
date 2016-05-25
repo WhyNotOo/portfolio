@@ -8,6 +8,7 @@ image: /img/leboncoin.png
 author: Kevin Albessard
 skills: [HTML5, CSS3, Javascript, Blocket template]
 goto: https://leboncoin.fr
+excerpt: Number one website in France for small ads
 ---
 
 <h2>Context</h2>

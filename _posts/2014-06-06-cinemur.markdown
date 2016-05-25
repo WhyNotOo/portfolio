@@ -8,6 +8,7 @@ image: /img/cinemur.png
 author: Kevin Albessard
 skills: [HTML5, CSS3 (SASS), Javascript, PHP, Ajax]
 goto: http://www.cine-loisirs.fr
+excerpt: Slick web interface to get information about cinema and TV shows
 ---
 
 <h2>Context</h2>
@@ -16,6 +17,6 @@ Cinemur is an agency that provide it's users a slick tool to consult all the thi
 They wanted to provide a new service with TV show, so I was in charge of making this whole part.
 
 <h2>Missons</h2>
-Rework the whole CSS into SASS : add a file architecture, structure the file, order the css properties correctly, add variables, mixins, and placeholders for a better maintainability.
+Rework the whole CSS into SASS : add a file architecture, structure each file, order the css properties correctly, add variables, mixins, and placeholders for a better maintainability.
 
-Add the TV show 
+Add the TV show tab, where you can add your favorite TV show to your watchlist, see the next showtimes, watch trailers of upcoming series, rate and review episodes, and keep track of what you have to watch next.

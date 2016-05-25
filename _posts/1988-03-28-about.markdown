@@ -4,9 +4,11 @@ title:  "About"
 date:   1988-03-28
 categories: About
 image: /img/thumbnail.jpg
+author: Kevin Albessard
+skills: []
 ---
 
-OMG OMG OMG
-You’ll find this post in your `_posts` directory.
+<h2>Me, myself and I</h2>
 
-Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Hello, I'm Kevin, I'm a web developer from France.
+My favorite thing in life is creating new stuffs, from digital content to real life objects. 

@@ -24,14 +24,15 @@ class Card {
 					e.stopPropagation();
 					Cards.loadPost(this, posts);
 				});
-			}, 410);
-		}, 400);
+			}, 300);
+		}, 300);
 	}
 
 
 	loadPost(post, set) {
 		let url = post.getAttribute('href');
-		document.location = url;
+		if(url != '' && url != null)
+			document.location = url;
 	}
 
 }
