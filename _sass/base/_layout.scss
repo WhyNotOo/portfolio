@@ -27,7 +27,6 @@ body {
 
 .headline {
 	display: flex;
-	flex: 0;
 	text-align: center;
 	justify-content: center;
 	@include remToPx(padding, 6rem 0);

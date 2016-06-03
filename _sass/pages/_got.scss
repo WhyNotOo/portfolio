@@ -1,0 +1,301 @@
+[class*="got_"] {
+	overflow: hidden;
+}
+
+[class*="got_tower"] {
+	@include size(80%, 80%);
+	margin: 0 auto;
+}
+
+[class*="got_church"] {
+	position: relative;
+	margin: 0 auto;
+}
+
+[class*="got_arrow"] {
+	@extend %absolute;
+	transition: all 3s linear;
+	box-shadow: none !important;
+
+	&.big {
+		transition: all 1s linear;
+	}
+
+	&.medium {
+		transition: all 2s linear;
+	}
+
+	&.small {
+		transition: all 4s linear;
+	}
+}
+
+.got {
+
+	&_small {
+		position: relative;
+		display: flex;
+		flex: 0 0 15%;
+	}
+
+	&_medium {
+		position: relative;
+		display: flex;
+		flex: 0 0 50%;
+	}
+
+	&_big {
+		position: relative;
+		display: flex;
+		flex: 1;
+	}
+
+	&_kingdom {
+		@extend %absolute;
+
+		&.done {
+			transform: none !important;
+		}
+	}
+
+	&_building {
+		display: flex;
+		align-items: center;
+
+		* {
+			display: flex;
+			align-items: center;
+			box-shadow: $shadow-big;
+		}
+	}
+
+	&_tower {
+		opacity: 0;
+		transition: all .5s linear;
+
+		&.done {
+			opacity: 1;
+		}
+
+		&_floor {
+			opacity: 1;
+			@include size(50%, 50%);
+
+			&.done {
+				transform: rotate(90deg);
+			}
+
+			.got_tower_floor.done {
+				transform: rotate(180deg);
+			}
+		}
+
+		.got_tower {
+			transition: all 1s linear;
+
+			.got_tower {
+				transition: all 1.5s linear;
+
+				.got_tower {
+					transition: all 2s linear;
+
+					.got_tower {
+						transition: all 2.5s linear;
+					}
+				}
+			}
+		}
+	}
+
+	&_church {
+		&_big {
+			@include size(300px, 300px);
+			background: lighten($blue, 10%);
+		}
+
+		&_medium {
+			@include size(200px, 200px);
+			background: lighten($blue, 20%);
+		}
+
+		&_small {
+			@include size(100px, 100px);
+			background: lighten($blue, 30%);
+		}
+	}
+
+	&_arrow_up {
+		transform: translateY(200%);
+		@include triangle(100px, $black, up);
+
+		&.done {
+			transform: translateY(100%);
+		}
+
+		&.big {
+			@include triangle(300px, $black, up);
+		}
+
+		&.medium {
+			@include triangle(200px, $black, up);
+		}
+
+		&.small {
+			@include triangle(60px, $black, up);
+		}
+	}
+
+	&_arrow_left {
+		transform: translateX(200%);
+		@include triangle(100px, $black, left);
+
+		&.done {
+			transform: translateX(100%);
+		}
+
+		&.big {
+			@include triangle(300px, $black, left);
+		}
+
+		&.medium {
+			@include triangle(200px, $black, left);
+		}
+
+		&.small {
+			@include triangle(60px, $black, left);
+		}
+	}
+
+	&_arrow_right {
+		transform: translateX(-100%);
+		@include triangle(100px, $black, right);
+
+		&.done {
+			transform: translateX(0);
+		}
+
+		&.big {
+			@include triangle(300px, $black, right);
+		}
+
+		&.medium {
+			@include triangle(200px, $black, right);
+		}
+
+		&.small {
+			@include triangle(60px, $black, right);
+		}
+	}
+
+	&_arrow_down {
+		transform: translateY(-100%);
+		@include triangle(100px, $black, down);
+
+		&.done {
+			transform: translateY(0);
+		}
+
+		&.big {
+			@include triangle(300px, $black, down);
+		}
+
+		&.medium {
+			@include triangle(200px, $black, down);
+		}
+
+		&.small {
+			@include triangle(60px, $black, down);
+		}
+	}
+
+	&_parliament_floor {
+		@include size(80%, 90%);
+		margin: 0 auto;
+		box-shadow: $shadow-big;
+		border-radius: 50%;
+
+		&.big {
+			background: lighten($red, 10%);
+		}
+
+		&.medium {
+			background: lighten($red, 20%);
+		}
+
+		&.small {
+			background: lighten($red, 30%);
+		}
+	}
+
+	&_parliament_roof {
+		position: relative;
+		@include size(60px, 60px);
+		margin: 0 auto;
+		box-shadow: none;
+		border-radius: 50%;
+		transition: all 3s linear;
+
+		&.done {
+			transform: rotate(135deg);
+		}
+	}
+
+	&_header,
+	&_footer {
+		.got_kingdom {
+			background: $black;
+			transition: all 1.5s linear;
+		}
+	}
+
+	&_header {
+		.got_kingdom {
+			transform: translateY(-100%);
+		}
+	}
+
+	&_footer {
+		.got_kingdom {
+			transform: translateY(100%);
+		}
+	}
+
+	&_center {
+		.got_kingdom {
+			background: $blue;
+			transition: all 5s linear;
+		}
+
+		.column {
+			&:first-child {
+				.got_kingdom {
+					transform: translateX(100%);
+				}
+			}
+			&:last-child {
+				.got_kingdom {
+					transform: translateX(-100%);
+				}
+			}
+		}
+	}
+
+	&_sidebar {
+		.got_kingdom {
+			background: $red;
+			transition: all 3s linear;
+		}
+
+		&-left {
+			.got_kingdom {
+				transform: translateX(-100%);
+			}
+		}
+		&-right {
+			.got_kingdom {
+				transform: translateX(100%);
+			}
+		}
+	}
+
+}
