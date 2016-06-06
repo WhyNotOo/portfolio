@@ -69,6 +69,44 @@
 		}
 	}
 
+	&_layer {
+		transition: all 2s linear;
+
+		&.done {
+			transform: none;
+		}
+
+		&-medium {
+			transition-duration: 4s;
+		}
+
+		&-small {
+			transition-duration: 5s;
+		}
+
+		&-left {
+			@include size(80%, 100%);
+			transform: translateX(-100%);
+		}
+
+		&-right {
+			@include size(80%, 100%);
+			margin-left: auto;
+			transform: translateX(100%);
+		}
+
+		&-up {
+			@include size(100%, 80%);
+			transform: translateY(-100%);
+		}
+
+		&-down {
+			@include size(100%, 80%);
+			margin-top: auto;
+			transform: translateY(100%);
+		}
+	}
+
 	&_tower {
 		opacity: 0;
 		transition: all .5s linear;
@@ -213,18 +251,6 @@
 		margin: 0 auto;
 		box-shadow: $shadow-big;
 		border-radius: 50%;
-
-		&.big {
-			background: lighten($red, 10%);
-		}
-
-		&.medium {
-			background: lighten($red, 20%);
-		}
-
-		&.small {
-			background: lighten($red, 30%);
-		}
 	}
 
 	&_parliament_roof {
@@ -263,7 +289,7 @@
 	&_center {
 		.got_kingdom {
 			background: $blue;
-			transition: all 5s linear;
+			transition: all 4s linear;
 		}
 
 		.column {
@@ -283,7 +309,7 @@
 	&_sidebar {
 		.got_kingdom {
 			background: $red;
-			transition: all 3s linear;
+			transition: all 2s linear;
 		}
 
 		&-left {
@@ -298,4 +324,53 @@
 		}
 	}
 
+}
+
+
+.red {
+	background: $red;
+
+	&_light {
+		background: lighten($red, 10%);
+	}
+
+	&_lighter {
+		background: lighten($red, 20%);
+	}
+
+	&_lightest {
+		background: lighten($red, 30%);
+	}
+}
+
+.blue {
+	background: $blue;
+
+	&_light {
+		background: lighten($blue, 10%);
+	}
+
+	&_lighter {
+		background: lighten($blue, 20%);
+	}
+
+	&_lightest {
+		background: lighten($blue, 30%);
+	}
+}
+
+.black {
+	background: $black;
+
+	&_light {
+		background: lighten($black, 10%);
+	}
+
+	&_lighter {
+		background: lighten($black, 20%);
+	}
+
+	&_lightest {
+		background: lighten($black, 30%);
+	}
 }

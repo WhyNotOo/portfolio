@@ -5,14 +5,20 @@
 
   <body class="column">
 
-  	<header class="got_small got_header"><div class="got_kingdom"></div></header>
+  	<header class="got_small got_header"><div class="got_kingdom">
+  		<div class="got_layer got_layer-up black_light"></div>
+  	</div></header>
 
     <main class="got_big" role="main">
     	{{ content }}
     </main>
 
-    <footer class="got_small got_footer"><div class="got_kingdom"></div></footer>
+    <footer class="got_small got_footer"><div class="got_kingdom">
+    	<div class="got_layer got_layer-up black_light"></div>
+    </div></footer>
+
     <script type="text/javascript" src="{{ "/js/app.js" | prepend: site.baseurl }}"></script>
+
   </body>
 
 </html>
