@@ -14,19 +14,19 @@
 
 [class*="got_arrow"] {
 	@extend %absolute;
-	transition: all 3s linear;
+	transition: all 6s linear;
 	box-shadow: none !important;
 
 	&.big {
-		transition: all 1s linear;
-	}
-
-	&.medium {
 		transition: all 2s linear;
 	}
 
-	&.small {
+	&.medium {
 		transition: all 4s linear;
+	}
+
+	&.small {
+		transition: all 8s linear;
 	}
 }
 
@@ -38,16 +38,19 @@
 		flex: 0 0 15%;
 	}
 
-	&_medium {
-		position: relative;
-		display: flex;
-		flex: 0 0 50%;
-	}
-
 	&_big {
 		position: relative;
 		display: flex;
 		flex: 1;
+	}
+
+	&_column {
+		display: flex;
+		flex: 0 0 50%;
+		flex-direction: column;
+		height: 100%;
+		align-items: flex-start !important;
+		box-shadow: none !important;
 	}
 
 	&_kingdom {
@@ -77,11 +80,14 @@
 		}
 
 		&-medium {
-			transition-duration: 4s;
+			transition-duration: 3s;
 		}
 
 		&-small {
-			transition-duration: 5s;
+			display: flex;
+			flex-direction: column;
+			transition-duration: 4s;
+			justify-content: space-between;
 		}
 
 		&-left {
@@ -107,162 +113,171 @@
 		}
 	}
 
-	&_tower {
-		opacity: 0;
-		transition: all .5s linear;
-
-		&.done {
-			opacity: 1;
-		}
-
-		&_floor {
-			opacity: 1;
-			@include size(50%, 50%);
+	&_church {
+		&_big {
+			@include size(600px, 600px);
+			background: lighten($blue, 10%);
+			transition: all 2s linear;
 
 			&.done {
 				transform: rotate(90deg);
 			}
-
-			.got_tower_floor.done {
-				transform: rotate(180deg);
-			}
-		}
-
-		.got_tower {
-			transition: all 1s linear;
-
-			.got_tower {
-				transition: all 1.5s linear;
-
-				.got_tower {
-					transition: all 2s linear;
-
-					.got_tower {
-						transition: all 2.5s linear;
-					}
-				}
-			}
-		}
-	}
-
-	&_church {
-		&_big {
-			@include size(300px, 300px);
-			background: lighten($blue, 10%);
 		}
 
 		&_medium {
-			@include size(200px, 200px);
+			@include size(400px, 400px);
 			background: lighten($blue, 20%);
+			transition: all 4s linear;
+
+			&.done {
+				transform: rotate(45deg);
+			}
 		}
 
 		&_small {
-			@include size(100px, 100px);
+			@include size(200px, 200px);
 			background: lighten($blue, 30%);
+			align-items: flex-start;
+			transition: all 6s linear;
+
+			&.done {
+				transform: rotate(135deg);
+			}
 		}
 	}
 
-	&_arrow_up {
+	&_arrow-up {
 		transform: translateY(200%);
-		@include triangle(100px, $black, up);
+		@include triangle(200px, $black, up);
 
 		&.done {
 			transform: translateY(100%);
 		}
 
 		&.big {
-			@include triangle(300px, $black, up);
+			@include triangle(600px, $black, up);
 		}
 
 		&.medium {
-			@include triangle(200px, $black, up);
+			@include triangle(400px, $black, up);
 		}
 
 		&.small {
-			@include triangle(60px, $black, up);
+			@include triangle(60px, lighten($black, 20%), up);
 		}
 	}
 
-	&_arrow_left {
+	&_arrow-left {
 		transform: translateX(200%);
-		@include triangle(100px, $black, left);
+		@include triangle(200px, $black, left);
 
 		&.done {
 			transform: translateX(100%);
 		}
 
 		&.big {
-			@include triangle(300px, $black, left);
+			@include triangle(600px, $black, left);
 		}
 
 		&.medium {
-			@include triangle(200px, $black, left);
+			@include triangle(400px, $black, left);
 		}
 
 		&.small {
-			@include triangle(60px, $black, left);
+			@include triangle(60px, lighten($black, 10%), left);
 		}
 	}
 
-	&_arrow_right {
+	&_arrow-right {
 		transform: translateX(-100%);
-		@include triangle(100px, $black, right);
+		@include triangle(200px, $black, right);
 
 		&.done {
 			transform: translateX(0);
 		}
 
 		&.big {
-			@include triangle(300px, $black, right);
+			@include triangle(600px, $black, right);
 		}
 
 		&.medium {
-			@include triangle(200px, $black, right);
+			@include triangle(400px, $black, right);
 		}
 
 		&.small {
-			@include triangle(60px, $black, right);
+			@include triangle(60px, lighten($black, 10%), right);
 		}
 	}
 
-	&_arrow_down {
+	&_arrow-down {
 		transform: translateY(-100%);
-		@include triangle(100px, $black, down);
+		@include triangle(200px, $black, down);
 
 		&.done {
 			transform: translateY(0);
 		}
 
 		&.big {
-			@include triangle(300px, $black, down);
+			@include triangle(600px, $black, down);
 		}
 
 		&.medium {
-			@include triangle(200px, $black, down);
+			@include triangle(400px, $black, down);
 		}
 
 		&.small {
-			@include triangle(60px, $black, down);
+			@include triangle(60px, lighten($black, 20%), down);
 		}
 	}
 
-	&_parliament_floor {
-		@include size(80%, 90%);
-		margin: 0 auto;
-		box-shadow: $shadow-big;
-		border-radius: 50%;
+	&_place {
+		display: flex;
+		flex: 1;
+		width: 100%;
+		box-shadow: none;
 	}
 
-	&_parliament_roof {
+	&_roof {
 		position: relative;
+		display: block;
 		@include size(60px, 60px);
 		margin: 0 auto;
+		background: $blue;
 		box-shadow: none;
 		border-radius: 50%;
-		transition: all 3s linear;
+		transition: all 6s linear;
+		overflow: hidden;
 
 		&.done {
-			transform: rotate(135deg);
+			transform: rotate(180deg);
+		}
+	}
+
+	&_rempart {
+		height: 20%;
+
+		&.done {
+			transform: none;
+		}
+
+		&-left {
+			transform: translateX(-100%);
+		}
+
+		&-right {
+			transform: translateX(100%);
+		}
+
+		&-first {
+			transition: all 2s linear;
+		}
+
+		&-second {
+			transition: all 4s linear;
+		}
+
+		&-third {
+			transition: all 6s linear;
 		}
 	}
 
@@ -289,26 +304,18 @@
 	&_center {
 		.got_kingdom {
 			background: $blue;
-			transition: all 4s linear;
-		}
+			opacity: 0;
+			transition: opacity 2s linear;
 
-		.column {
-			&:first-child {
-				.got_kingdom {
-					transform: translateX(100%);
-				}
-			}
-			&:last-child {
-				.got_kingdom {
-					transform: translateX(-100%);
-				}
+			&.done {
+				opacity: 1;
 			}
 		}
 	}
 
 	&_sidebar {
 		.got_kingdom {
-			background: $red;
+			background: lighten($red, 40%);
 			transition: all 2s linear;
 		}
 
